@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-head">Welcome to Weather App 🌥️</h1>
+        <!-- 
+          Create a form element to handle user input
+        -->
+        <form action="/weather" method="post">
+            <input type="text" name="city" placeholder="Enter City Name">
+            <button type="submit" class="btn">Get Weather 🔎</button>
+
+                <div class="weather-image">
+                   <!-- 
+                  Check if the weather data is available
+                -->
+                    <% if(locals.weather && weather.weather && weather.weather.length > 0) { %>
+                        <% weather.weather.forEach(function(weatherCondition) { %>
+                            <% if(weatherCondition.main == 'Haze') { %>
+                                <img src="images/mist.png" alt="Hazy image">
+                            <% } else if(weatherCondition.main == 'Clouds'){ %>
+                                <img src="images/cloud.png" alt="Cloudy image">
+                           <%  }else if(weatherCondition.main == 'Rain'){ %>
+                                <img src="images/rain.png" alt="Cloudy image">
+                          <%  }else if(weatherCondition.main == 'Snow'){ %>
+                                <img src="images/snow.png" alt="Cloudy image">
+                         <%  }else if(weatherCondition.main == 'Sunny'){ %>
+                                <img src="images/clear.png" alt="sunny image">
+                                <% } %>
+                                 <h1><%= weather.main.temp %>°C</h1>
+                                <figure> <img src="images/map.png">   <figcaption><%= weather.name %> </figcaption></figure>
+                             
+                                <p>Description: <%= weatherCondition.description %></p> 
+                        <% }); %>
+                
+                       <!-- 
+                      Display the error message
+                    -->
+                    <% }  if (locals.error) { %>
+                        <h1><%= locals.error %></h1>
+                        <img src="<%= locals.imageUrl %>" alt="404 Not Found" class="error-image">
+                    <% } %>
+                   
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    font-family: "Fraunces", serif;
+    background: url("../images/bg-1.jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+/* Style the container element*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    
+
+}
+
+/*Style the main-head element*/
+.main-head {
+    background-color: #bebec0;
+}
+
+/*Style input elements of type text*/
+input[type='text'] {
+    border: none;
+    padding: 10px;
+    font-size:24px;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    background-color:#bebec0;
+    outline: none;
+}
+
+.btn {
+    background-color:#329900;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #fff45c;
+}
+
+.weather-image img {
+    max-width: 100px; 
+    height: auto;
+    margin: 20px;
+    border-radius: 10px; 
+}
+
+.error-image {
+    max-width: 400px!important; /* adjust the width to your desired size */
+    height: 350px!important;
+    margin: 20px auto;
+}
+
+@media only screen and (max-width: 600px) {
+    input[type='text'] {
+        width: 90vw;
+    }
+
+    .btn {
+        width: 90vw;
+    }
+
+    .weather-image img {
+        max-width: 50px; /* reduce the image width on smaller screens */
+    }
+}
