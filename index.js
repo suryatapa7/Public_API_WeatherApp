@@ -6,7 +6,7 @@ import axios from 'axios';
 const app = express()
 
 // Define the port number
-const port = 3000;
+const port = process.env.port || 5000
 
 // Define the API key for OpenWeatherMap API
 const API_KEY = "5ee7459c0aaf67e2f9d7b324d2d7d1f3"
