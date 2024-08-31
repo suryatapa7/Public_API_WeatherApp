@@ -5,13 +5,11 @@
 body {
     margin:0;
     font-family: "Fraunces", serif;
-    background: url("../images/bg-1.jpg") no-repeat center center fixed;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("../images/bg-2.jpg") no-repeat center/cover fixed;
     height: 100vh;
     width: 100vw;
-    object-fit: cover;
+    background-color: aqua;
+    color:#fff;
 }
 
 /* Style the container element*/
@@ -23,12 +21,10 @@ body {
     height: 100vh;
     margin: 0 auto;
     text-align: center;
+    background-color: rgba(0,0,0,0.6);
+
 }
 
-/*Style the main-head element*/
-.main-head {
-    background-color: #bebec0;
-}
 
 /*Style input elements of type text*/
 input[type='text'] {
